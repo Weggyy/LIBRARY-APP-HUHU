@@ -15,7 +15,6 @@ export function LibraryBooks() {
   return (
     <div>
       <h2>Library</h2>
-      <h1>Search Bar</h1>
       <input 
         type="text" 
         placeholder="Search books..."
