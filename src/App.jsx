@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <h1>Library App HUHU</h1>
+      <h1>ReactRead: A Book Searcher</h1>
     </div>
   );
 }
