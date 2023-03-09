@@ -1,13 +1,12 @@
-import LibraryBooks from "./components/LibraryBooks";
-import SearchBar from "./components/SearchBar";
+import { useState } from "react";
+import { LibraryBooks }from "./components/MainContent";
 
 function App() {
+  const [isSearched, setSearched] = useState(true);
 
   return (
     <div>
       <h1>ReactRead: A Book Searcher</h1>
-      {}
-      <SearchBar />
       <LibraryBooks />
     </div>
   );
