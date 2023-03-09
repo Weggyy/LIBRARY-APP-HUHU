@@ -3,32 +3,35 @@ import data from '../data/booksData.json'
 
 
 export function LibraryBooks() {
-  const [isFilter, setFilter] = useState(false);
   const [input, setInput] = useState("");
+  const [newData, setNewData] = useState(data);
 
-  const filteredBooks = data.filter(book =>
-    book.title.toLowerCase().includes(input.toLowerCase()));
-
-  const handleSearch = () => {
-    setFilter(true);
+  const filteredBooks = () => {
+    const newBooks = data.filter(book => book.title.toLowerCase().includes(input.toLowerCase()));
+    setNewData(newBooks);
   }
+
 
   return (
     <div>
       <h2>Library</h2>
       <h1>Search Bar</h1>
-      <input type="text" value={input} onChange={e => setInput(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
+      <input 
+        type="text" 
+        placeholder="Search books..."
+        value={input} 
+        onChange={e => setInput(e.target.value)}
+      />
 
-      {isFilter && filteredBooks.map(book => (
-        <div>
+      <button onClick={filteredBooks}>Search</button>
+      {newData.map(book => (
+      <div>
         <hr />
         <h1>{book.title}</h1>
         <h3>{book.author}</h3>
         <p>{book.genre}</p>
-        </div>
-      ))}
-
+      </div>
+    ))}
     </div>
   );
 }
