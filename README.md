@@ -1,3 +1,2 @@
 LIBRARY
-STAB
-AF
+APP
